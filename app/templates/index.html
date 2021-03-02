@@ -1,0 +1,13 @@
+{% extends "base.html"%}
+
+{% block content %}
+<h1>Hellooo {{ user.username }} -- {{ conf }}</h1>
+<article>
+   {% for post in posts %}
+      <div>
+         Article Title: {{ post.blog_title }}
+      </div>
+      <div>Author: {{ post.author }}</div>
+   {% endfor %}
+</article>
+{% endblock %}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   {% if title: %}
+      <title>Floretta {{ title }} </title>
+   {% else %}
+      <title>Floretta with NO title </title>
+   {% endif %}
+   
+</head>
+<body>
+   <div>
+      Floretta Microblog 
+      <a href="/index">Home</a> 
+      <a href="/login">Login</a>
+   </div>
+   <hr>
+   {% with messages = get_flashed_messages() %}
+   {% if messages %}
+   <ul>
+      {% for message in messages %}
+         <li>{{ message }}</li>
+      {% endfor %}
+   </ul>      
+   {% endif %}
+   {% endwith %}
+   {% block content %}{% endblock %}
+</body>
+</html>

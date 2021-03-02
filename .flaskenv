@@ -1,0 +1,1 @@
+FLASK_APP=floretta_app.py
